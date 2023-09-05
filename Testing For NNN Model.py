@@ -241,4 +241,19 @@ class simulate_plot():
             
             return anim
 
-    
+
+plottings = simulate_plot(labels, outputs)
+
+plottings.plot_phase_space(st = 0, len=100)
+
+plottings.plot_trajectory(st=1000, len=100)
+
+plottings.plot_time_series(st=0, len = 1000)
+
+anim = plottings.animate(len = 1000, interval = 1)
+
+print(plottings.data['theta1'][0:10], plottings.data['theta1_pre'][0:10])
+
+time_series_plot([i for i in range(len(theta1_original[:1000]))], theta1_original[:1000], theta1_predicted[:1000])
+
+
